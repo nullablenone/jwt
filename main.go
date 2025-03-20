@@ -6,9 +6,14 @@ import (
 )
 
 func main() {
-	user, err := token.GenerateToken(1)
+	t, err := token.GenerateToken(1)
 	if err != nil {
-		fmt.Println("gagal generate : ", err)
+		fmt.Println(err)
 	}
-	fmt.Println("token : ", user)
+
+	verif, err := token.ValidasiToken(t)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(verif)
 }
