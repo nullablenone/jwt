@@ -6,14 +6,17 @@ import (
 )
 
 func main() {
-	t, err := token.GenerateToken(1)
-	if err != nil {
-		fmt.Println(err)
-	}
 
-	verif, err := token.ValidasiToken(t)
-	if err != nil {
-		fmt.Println(err)
-	}
-	fmt.Println(verif)
+	//cek perbedaan
+
+	test_token, err := token.GenerateToken(72846)
+
+	fmt.Println("token pertama : ", test_token)
+	fmt.Println("error ", err)
+
+	//setelah di validasi
+	token, errorrr := token.ValidasiToken(test_token)
+	fmt.Println("token : ", token.Raw)
+	fmt.Println("error ", errorrr)
+
 }
